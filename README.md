@@ -67,6 +67,9 @@ Each device is uniquely identified by its deviceId.
 Each CRM is authenticated by its apiKey.
 API maintains a mapping of deviceId to CRMs to ensure messages are routed correctly.
 Architecture Diagram
+
+
+
                 +-----------------+                        +-----------------+
                 |    Android SMS  |    WebSocket API       |    CRM          |
                 |    Server       | <--------------------> |                 |
@@ -79,6 +82,9 @@ Architecture Diagram
                    +------+-------+                      +--------+--------+
                    |     Database  |                      |    WebSocket    |
                    +---------------+                      +-----------------+
+
+
+                   
 Key Features
 Authentication and Security:
 Android devices and CRMs authenticate with tokens and apiKeys.
