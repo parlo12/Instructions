@@ -35,6 +35,7 @@ C. Message Workflow
 1. Incoming SMS (From Android to CRM):
 Android device receives an SMS.
 SMS is sent to the API via WebSocket:
+
 {
   "deviceId": "12345",
   "messageId": "msg123",
@@ -42,24 +43,31 @@ SMS is sent to the API via WebSocket:
   "content": "Hello!",
   "timestamp": "2024-12-16T12:00:00Z"
 }
+
 API routes the SMS to the associated CRM via WebSocket or webhook.
-2. Outgoing SMS (From CRM to Android):
+3. Outgoing SMS (From CRM to Android):
 CRM sends an SMS instruction to the API:
+
 {
   "apiKey": "crmApiKey",
   "deviceId": "12345",
   "receiver": "+11234567890",
   "content": "Reply to Hello!"
 }
+
 API verifies the apiKey and forwards the SMS to the Android device via WebSocket.
-3. Delivery Receipts:
+4. Delivery Receipts:
 Android device sends delivery status updates:
+
 {
   "deviceId": "12345",
   "messageId": "msg123",
   "status": "DELIVERED",
   "timestamp": "2024-12-16T12:05:00Z"
 }
+
+
+
 API forwards the status to the CRM.
 D. Managing Multiple Devices and CRMs
 
